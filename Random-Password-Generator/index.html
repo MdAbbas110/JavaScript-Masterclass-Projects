@@ -4,9 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <title>Password Generator</title>
   </head>
   <body>
+    <div class="password-generator">
+      <h1>Password Generator</h1>
+      <div class="options">
+        <label for="length">Length</label>
+        <input type="range" id="length" min="8" max="32" value="16" />
+        <span id="lengthValue">16</span>
+
+        <div class="checkBox-group">
+          <input type="checkbox" id="uppercase" checked />
+          <label for="uppercase">Uppercase</label>
+
+          <input type="checkbox" id="lowercase" checked />
+          <label for="lowercase">Lowercase</label>
+
+          <input type="checkbox" id="numbers" checked />
+          <label for="numbers">Numbers</label>
+
+          <input type="checkbox" id="special" checked />
+          <label for="special">Special Characters</label>
+        </div>
+      </div>
+      
+      <button>Generate</button>
+      <input type="text" id="password" readonly />
+      <button><i class="fa-solid fa-copy"></i></button>
+      <span id="copyTooltip" class="tooltip">Copied!</span>
+    </div>
+      
+    <div class="history">
+      <h2>Password History</h2>
+      <ul id="passwordHistory"></ul>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
