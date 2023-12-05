@@ -28,8 +28,49 @@ function generatePassword() {
   let password = '';
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * characterSet.length);
-    console.log(characterSet[randomIndex]);
     password += characterSet[randomIndex];
   }
   document.getElementById('password').value = password;
 }
+
+function copyToClipboard() {
+  const passwordField = document.getElementById('password');
+  passwordField.select();
+  document.execCommand('copy');
+
+  const tooltip = document.getElementById('copyTooltip');
+  tooltip.style.display = 'block';
+
+  setTimeout(() => {
+    tooltip.style.display = 'none';
+  }, 2000);
+}
+
+function saveToHistory(password, history) {
+  //fetch the current history from localStorage
+
+  let history = JSON.parse(localStorage.getItem('passwordHistory' || '[]'));
+
+  if (!password.includes(password)) {
+    history.push(password);
+    //? save the updated history the local storage
+
+    localStorage.setItem('passwordHistory', JSON.stringify(history));
+  }
+}
+
+function displayHistory() {
+  const historyElement = document.getElementById('passwordHistory');
+  //clear the current history
+  historyElement.innerHTML = '';
+
+  //Append every single password to the history
+
+  historyElement.forEach((password) => {
+    const li = document.createElement('li');
+    li.textContent = password;
+    historyElement.appendChild(li);
+  });
+}
+
+window.onload = displayHistory;

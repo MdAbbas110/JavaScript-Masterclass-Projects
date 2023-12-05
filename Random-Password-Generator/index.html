@@ -34,8 +34,11 @@
       </div>
 
       <button onclick="generatePassword()">Generate</button>
-      <input type="text" id="password" readonly />
-      <button><i class="fa-solid fa-copy"></i></button>
+      <input class="input-icon" type="text" id="password" readonly />
+      <!-- <i class="fa-solid fa-key"></i> -->
+      <button onclick="copyToClipboard()">
+        <i class="fa-solid fa-copy"></i>
+      </button>
       <span id="copyTooltip" class="tooltip">Copied!</span>
     </div>
 
