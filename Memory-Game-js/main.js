@@ -25,8 +25,10 @@ function buildTile(color) {
   element.setAttribute('data-revealed', false);
 
   element.addEventListener('click', () => {
+    const reveled = element.getAttribute('data-revealed');
+
     // check that not to reveal tile on wrong select
-    if (awaitingEndOfMove) {
+    if (awaitingEndOfMove || reveled === 'true' || element === activeTile) {
       return;
     }
 
@@ -42,6 +44,9 @@ function buildTile(color) {
     const colorToMatch = activeTile.getAttribute('data-color');
 
     if (colorToMatch === color) {
+      activeTile.setAttribute('data-revealed', true);
+      element.setAttribute('data-reveled', true);
+
       awaitingEndOfMove = false;
       activeTile = null;
       revealedCount += 2;
