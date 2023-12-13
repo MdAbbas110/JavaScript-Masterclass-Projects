@@ -30,7 +30,7 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
     border: none;
-    box-shadow: 0 10px 20px rgba(0,0,0, 0.19), 0 6px 6px rgb(2, 2, 137);
+    box-shadow: 0 10px 20px rgba(0,0,0, 0.19), 0 6px 6px rgb(120, 123, 122);
     transition: box-shadow 0.3 cubic-bezier(.25,.8,.25,1);
 }
 
