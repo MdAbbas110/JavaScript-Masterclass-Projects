@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <style>
+      body {
+        background-color: darkgrey;
+      }
+      .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .col {
+        height: 70px;
+        width: 70px;
+        border: 1.5px solid rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+      }
+      center {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>Play Tic Tac Toe</center>
+    <div class="container">
+      <div class="grid">
+        <div class="row">
+          <div onclick="handleClick(this)" id="1" class="col"></div>
+          <div onclick="handleClick(this)" id="2" class="col"></div>
+          <div onclick="handleClick(this)" id="3" class="col"></div>
+        </div>
+
+        <div class="row">
+          <div onclick="handleClick(this)" id="4" class="col"></div>
+          <div onclick="handleClick(this)" id="5" class="col"></div>
+          <div onclick="handleClick(this)" id="6" class="col"></div>
+        </div>
+
+        <div class="row">
+          <div onclick="handleClick(this)" id="7" class="col"></div>
+          <div onclick="handleClick(this)" id="8" class="col"></div>
+          <div onclick="handleClick(this)" id="9" class="col"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
